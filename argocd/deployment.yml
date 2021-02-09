@@ -5,7 +5,7 @@ metadata:
   labels:
     app: hi-beesh-app
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: hi-beesh-app
