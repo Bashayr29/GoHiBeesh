@@ -1,0 +1,19 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: golang-target
+spec:
+  type: image
+  params:
+    - name: url
+      value: image-registry.openshift-image-registry.svc:5000/workshops/go-hi-beesh-git:latest
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: golang-source
+spec:
+  type: git
+  params:
+    - name: url
+      value: https://github.com/Bashayr29/GoHiBeesh.git

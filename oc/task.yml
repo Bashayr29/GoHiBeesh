@@ -1,0 +1,23 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Task
+metadata:
+  name: golang-build
+  annotations:
+    tekton.dev/displayName: "golang build"
+spec:
+  inputs:
+    resources:
+      - name: golang-source
+        type: git
+    params:
+      - name: pathToDockerFile
+        type: string
+        description: The path to the dockerfile to build
+        default: .
+  outputs:
+    resources:
+      - name: builtImage
+        type: image
+  steps:
+  - name: build-and-push
+    image: golang:latest

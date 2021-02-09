@@ -1,0 +1,20 @@
+apiVersion: tekton.dev/v1alpha1
+kind: TaskRun
+metadata:
+  name: build-docker-image-from-git-source-task-run
+spec:
+  taskRef:
+    name: golang-build
+  inputs:
+    resources:
+      - name: golang-source
+        resourceRef:
+          name: golang-build
+    params:
+      - name: pathToDockerFile
+        value: Dockerfile
+  outputs:
+    resources:
+      - name: builtImage
+        resourceRef:
+          name: golang-target
