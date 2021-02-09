@@ -1,0 +1,9 @@
+Installation:
+https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd
+$ helm repo add argo https://argoproj.github.io/argo-helm
+$ helm install {deployment_name} argo/argo-cd
+auto-sync!
+syncPolicy:
+  automated:
+    prune: true
+    selfHealing: true
