@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hi-beesh-deployment
+  labels:
+    app: hi-beesh-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hi-beesh-app
+  template:
+    metadata:
+      labels:
+        app: hi-beesh-app
+    spec:
+      containers:
+        - name: hi-beesh-app
+          image: hi-beesh-app:v.01
+          ports:
+            - containerPort: 8080
