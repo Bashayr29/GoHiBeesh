@@ -4,16 +4,16 @@ env:
   SERVICE: gohibeesh-stage
   REGION: us-west1
 
-on:
+on: # When do you want it to run
   push:
     branches: [ master ]
   workflow_dispatch:
 
-jobs:
+jobs: # Define jobs to run
 
   build:
-    runs-on: ubuntu-latest
-    steps:
+    runs-on: ubuntu-latest # Define job-specific info
+    steps: # Define job steps
       - uses: actions/checkout@v2
 
       - name: Set up Go
