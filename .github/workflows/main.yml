@@ -1,14 +1,13 @@
 name: Go
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT }}
-  SERVICE: gohibeesh-production
+  SERVICE: gohibeesh-stage
   REGION: us-west1
 
 on:
-  release:
-    types: [ published ]
+  push:
+    branches: [ master ]
   workflow_dispatch:
-
 
 jobs:
 
