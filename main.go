@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"time"
 	"log"
 	"net/http"
+	"time"
 )
-func handler(w http.ResponseWriter, r *http.Request)  {
+
+func handler(w http.ResponseWriter, r *http.Request) {
 	dt := time.Now()
 	fmt.Fprintf(w, "Hi Beesh, today is: %s ", dt.Format("01-02-2006 Mon"))
 }
