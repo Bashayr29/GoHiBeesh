@@ -4,7 +4,7 @@ env:
   SERVICE: gohibeesh-production
   REGION: us-west1
 on:
-  release:
+  release: # When release created and published
     types: [ published ]
   workflow_dispatch:
 
